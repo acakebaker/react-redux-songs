@@ -1,6 +1,6 @@
 import React from 'react';
-import SongList from './songList';
-import SongDetail from './songDetail';
+import SongList from './SongList';
+import SongDetail from './SongDetail';
 import '../css/main.css';
 
 const App = () => {

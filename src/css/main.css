@@ -48,22 +48,27 @@
    height: 30px;
    width: 100px;
    color: white;
-   background-color: rgb(77, 77, 77);
+   background-color: rgb(39, 39, 39);
    border: none;
    border-radius: 15px;
    cursor: pointer;
    font-weight: bold;
-   transition: ease-in .2s;
+   transition: ease-in .1s;
 }
 
 .list-button:hover{
-   background-color: rgb(63, 63, 63);
+   background-color: rgb(70, 70, 70);
+}
+
+.active{
+   color: rgb(146, 146, 146);
 }
 
 /* songDetail.js */
 .detail-select{
-   background:salmon;
-   
+  text-align: center;
+  margin-top: 20px;
+  align-items: center;
 }
 
 .detail-blur{ 

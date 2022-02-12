@@ -1,32 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { selectSong } from '../actions';
 
-class SongList extends Component {
-   renderList() {
-      const mappedSongs = this.props.songs;
-      return mappedSongs.map(song => {
-         return (
-            <div className='list-divider' key={song.title}>
-               <div className='list-title'>{song.title}</div>
-               <button className='list-button' onClick={() => this.props.selectSong(song)}>Select</button>
-            </div>
-         );
-      });
-   };
+const SongList = ({ songs, selectedSong, selectSong }) => {
 
-   render() {
-      return (
-         <div className='column-left'>
-            {this.renderList()}
-         </div>
-      );
-   };
-};
+   console.log(selectedSong);
+
+   return (
+      <div className='column-left'>
+         {
+            songs.map((song) => (
+               <div className='list-divider' key={song.title}>
+                  <div className='list-title'>{song.title}</div>
+                     <button 
+                        className={`list-button ${(selectedSong !== null) && (selectedSong.title === song.title) ? 'active' : ''}`} 
+                        onClick={() => selectSong(song)}
+                     >
+                        {(selectedSong !== null) && (selectedSong.title) === song.title ? 'Selected' : 'Select'}
+                     </button>
+               </div>
+            ))
+         }
+      </div>
+   );
+
+
+}
 
 // Used to get the props from the store. Conventional Naming.
 const mapStateToProps = state => {
-   return { songs: state.songListReducer };
+   console.log(state.selectedSongReducer);
+   return {
+      songs: state.songListReducer, 
+      selectedSong: state.selectedSongReducer
+   };
 };
 
 export default connect(mapStateToProps, { selectSong })(SongList);

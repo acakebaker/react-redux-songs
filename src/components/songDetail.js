@@ -1,16 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const songDetail = ({ song }) => {
-   // 
+const SongDetail = ({ song }) => {
+   // Displays when no song is selected.
    if(!song) {
       return (
          <div className='column-right'>
-            <div className='detail-select'>Select a song.</div>
+            <h3 className='detail-select'>Select a song.</h3>
          </div>
       );
    };
 
+   // Gets the background image.
    const background = require(`../artwork/${song.artwork}`);
 
    return (
@@ -27,8 +28,11 @@ const songDetail = ({ song }) => {
    );
 };
 
+// Used to get the props from the store. Conventional Naming.
 const mapStateToProps = state => {
-   return { song: state.selectedSongReducer};
+   return {
+      song: state.selectedSongReducer
+   };
 };
 
-export default connect(mapStateToProps)(songDetail);
+export default connect(mapStateToProps)(SongDetail);
