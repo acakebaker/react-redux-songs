@@ -1,0 +1,93 @@
+/* App.js */
+
+.container{
+   width: 98%;
+   max-width:1000px;
+   margin: 20px auto;
+   display: flex;
+   justify-content: space-between;
+}
+
+.column-right{
+   width: 49%;
+   height:100%;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+   border-radius: 30px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.column-left{
+   width: 49%;
+}
+
+/* songList.js */
+
+.list-divider{
+   width: 96%;
+   border-bottom: 1px solid rgb(49, 49, 49);
+   margin-bottom: 15px;
+   padding-right: 2%;
+   padding-left: 2%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.list-title{
+   height:100%;
+   font-weight: bold;
+   font-size: 20px;
+}
+
+.list-button{
+   height: 30px;
+   width: 100px;
+   color: white;
+   background-color: rgb(77, 77, 77);
+   border: none;
+   border-radius: 15px;
+   cursor: pointer;
+   font-weight: bold;
+   transition: ease-in .2s;
+}
+
+.list-button:hover{
+   background-color: rgb(63, 63, 63);
+}
+
+/* songDetail.js */
+.detail-select{
+   background:salmon;
+   
+}
+
+.detail-blur{ 
+   border-radius: 30px;
+   backdrop-filter: blur(100px);
+   height: 100%;
+}
+
+.detail-content{
+   text-align: center;
+   padding-top: 10%;
+   padding-bottom: 5%;
+}
+
+.detail-image{
+   height: 94%;
+   max-height: 400px;
+   width: 94%;
+   max-width: 400px;
+   border-radius: 20px;
+   box-shadow: 0 0 20px #858585;
+}
+
+.detail-text{
+   align-content: center;
+   text-shadow: 0px 0 20px #000000;
+}
